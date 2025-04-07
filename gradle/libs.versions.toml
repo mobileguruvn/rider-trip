@@ -16,6 +16,8 @@ dagger-hilt = "2.56"
 androidXHilt = "1.2.0"
 
 navigationCompose = "2.8.9"
+tripContract = "1.0.1"
+tripImpl = "1.0.1"
 
 [libraries]
 androidx-core-ktx = { group = "androidx.core", name = "core-ktx", version.ref = "coreKtx" }
@@ -43,6 +45,8 @@ hilt-navigation-compose = { module = "androidx.hilt:hilt-navigation-compose", ve
 
 androidx-material-icons-extended = { module = "androidx.compose.material:material-icons-extended" }
 androidx-lifecycle-viewmodel-savedstate = { module = "androidx.lifecycle:lifecycle-viewmodel-savedstate", version.ref = "lifecycleRuntimeKtx" }
+trip-contract = { module = "com.ridertracker:trip-contract", version.ref = "tripContract" }
+trip-impl = { module = "com.ridertracker:trip-impl", version.ref = "tripImpl" }
 
 [plugins]
 android-application = { id = "com.android.application", version.ref = "agp" }

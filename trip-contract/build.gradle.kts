@@ -1,10 +1,19 @@
 plugins {
     alias(libs.plugins.android.library)
     alias(libs.plugins.kotlin.android)
+    id("maven-publish")
 }
 
+version = "1.0.1"
+
 android {
-    namespace = "com.brian.trip_contract"
+    publishing {
+        singleVariant("release") {
+            withSourcesJar()
+        }
+    }
+
+    namespace = "com.rider.trip.contract"
     compileSdk = 35
 
     defaultConfig {
@@ -31,6 +40,8 @@ android {
         jvmTarget = "11"
     }
 }
+
+apply(from = "$rootDir/gradle/publish-module.gradle.kts")
 
 dependencies {
 

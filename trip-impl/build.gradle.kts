@@ -4,10 +4,21 @@ plugins {
     alias(libs.plugins.kotlin.compose)
     alias(libs.plugins.kotlin.ksp)
     alias(libs.plugins.hilt.gradle)
+    id("maven-publish")
 }
 
+version = "1.0.1"
+apply(from = "$rootDir/gradle/publish-module.gradle.kts")
+
 android {
-    namespace = "com.brian.trip_impl"
+
+    publishing {
+        singleVariant("release") {
+            withSourcesJar()
+        }
+    }
+
+    namespace = "com.rider.trip.impl"
     compileSdk = 35
 
     defaultConfig {
@@ -37,7 +48,7 @@ android {
 
 dependencies {
 
-    implementation(project(":trip-contract"))
+    implementation(libs.trip.contract)
 
     implementation(platform(libs.androidx.compose.bom))
     implementation(libs.androidx.core.ktx)
