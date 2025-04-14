@@ -44,7 +44,9 @@ android {
 dependencies {
 
     implementation(libs.trip.contract)
-    implementation(libs.trip.impl)
+//    implementation(libs.trip.impl)
+
+    implementation(project(":trip-impl"))
 
     implementation(libs.androidx.core.ktx)
     implementation(libs.androidx.lifecycle.runtime.ktx)
